@@ -3,7 +3,7 @@
 # 1.12 Задачи по материалам недели
 
 '''
-Паша очень любит кататься на общественном транспорте, а получая билет, сразу проверяет, счастливый ли ему попался. 
+Паша очень любит кататься на общественном транспорте, а получая билет, сразу проверяет, счастливый ли ему попался.
 Билет считается счастливым, если сумма первых трех цифр совпадает с суммой последних трех цифр номера билета.
 
 Однако Паша очень плохо считает в уме, поэтому попросил вас написать программу, которая проверит равенство сумм и выведет "Счастливый", если суммы совпадают, и "Обычный", если суммы различны.
@@ -21,34 +21,18 @@ Sample Input 2:
 123456
 Sample Output 2:
 Обычный
-'''   
-
-#ticketNumber = int(input())
-ticketNumber = 123456
-
-print((ticketNumber // 10e4) % 10e0)
-print((ticketNumber // 10e3) % 10e0)
-print((ticketNumber // 10e2) % 10e0)
-print((ticketNumber // 10e1) % 10e0)
-print((ticketNumber // 10e0) % 10e0)
-print((ticketNumber // 10e-1) % 10e0)
-
 '''
-number1 = 
-print(number1)
-number2 = 
-print(number2)
-number3 = 
-print(number3)
-number4 = 
-print(number4)
-number5 = 
-print(number5)
-number6 = 
-print(number6)
+
+ticketNumber = int(input())
+
+number1 = int((ticketNumber // 10e4)  % 10e0)
+number2 = int((ticketNumber // 10e3)  % 10e0)
+number3 = int((ticketNumber // 10e2)  % 10e0)
+number4 = int((ticketNumber // 10e1)  % 10e0)
+number5 = int((ticketNumber // 10e0)  % 10e0)
+number6 = int((ticketNumber // 10e-1) % 10e0)
 
 if (number1 + number2 + number3) == (number4 + number5 + number6):
 	print('Счастливый')
-elif:
+else:
 	print('Обычный')
-'''
