@@ -19,17 +19,37 @@ aaabbbbcceeeeeeeeeeb
 # o10l11Y19t19C6u14p7J19S18b7T16B6s9k10N19C4X9v11t5e2o15W18
 # o10l11y19t19c6u14p7j19s18b7t16b6s9k10n19c4x9v11t5e2o15w18
 
-test_string = a12b10c3d1
+#test_string = 'a12b10c3d1'
 
 digits = set('0123456789')
-i = 1
+i = 0
+multiplier = ''
+decrypted = ''
 
-with open('input.txt') as input_f_obj:
-    string = input_f_obj.readline().lower().strip()
+with open('03.04_02_input.txt') as input_f_obj:
+    string = input_f_obj.readline().strip()
+	
+char = string[i]
+i += 1
 
-    while (i + 1) < len(string):
-        if string[i] in digits:
-            number += string[i]
-            i += 1
+while i < len(string):    
+	
+	while string[i] in digits:
+		multiplier += string[i]
+		i += 1
+		if i > (len(string) - 1):
+			break
+	
+	#print(char * int(multiplier), end='')
+	decrypted += (char * int(multiplier))
+   
+	multiplier = '' 
+	if i > (len(string) - 1):
+			break
+	char = string[i]
+	
+	i += 1	
 
-with open('ouput.txt', 'w') as ouput_f_obj:
+with open('03.04_02_ouput.txt', 'w') as ouput_f_obj:
+	ouput_f_obj.write(decrypted)
+	
