@@ -31,20 +31,55 @@ Sample Output:
 '''
 
 n = int(input())
+
 teams = {}
-games = 0
+games = 1
 wins = 0
 draws = 0
 loses = 0
 points = 0
-team_list = [games, wins, draws, loses, points]
+#team_list = [games, wins, draws, loses, points]
+
 i = 0
 
 for _ in range(n):
-    string = input().split(';')
-    if string[i] not in teams:
-        teams[string[i]] = [games + 1, wins, draws, loses, points]
-    if string[i+2] not in teams:
-        teams[string[i+2]] = [games + 1, wins, draws, loses, points]
-    if string[i+1] > string[i+3]:
-print(teams)
+    
+	string = input().split(';')
+	
+	# Проверка наличия команд из ввода в словаре
+	# если нет, добавляем
+	# если есть, увеличиваем количество игр на 1
+	
+	# Проверка наличия первой команды из ввода в словаре
+	if string[i] not in teams:
+		teams[string[i]] = [games, wins, draws, loses, points]
+	elif string[i] in teams:
+		teams[string[i]][0] += 1
+		
+	# Проверка наличия второй команды из ввода в словаре
+	if string[i+2] not in teams:
+		teams[string[i+2]] = [games, wins, draws, loses, points]
+	elif string[i+2] in teams:
+		teams[string[i+2]][0] += 1
+		
+	# Проверка результатов матча
+	
+	if string[i+1] > string[i+3]:
+		teams[string[i]][1] += 1     # Начисление победы для К1
+		teams[string[i]][4] += 3     # Начисление очков победы для К1
+		teams[string[i+2]][3] += 1   # Начисление поражения для К2
+		teams[string[i+2]][4] += 0   # Начисление очков поражения для К2
+	elif string[i+1] < string[i+3]:
+		teams[string[i+2]][1] += 1   # Начисление победы для К2
+		teams[string[i+2]][4] += 3   # Начисление очков победы для К2
+		teams[string[i]][3] += 1     # Начисление поражения для К1
+		teams[string[i]][4] += 0     # Начисление очков поражения для К1
+	elif string[i+1] == string[i+3]:
+		teams[string[i]][2] += 1   # Начисление ничьей для К1
+		teams[string[i]][4] += 1   # Начисление очков ничьей для К1
+		teams[string[i+2]][2] += 1     # Начисление ничьей для К2
+		teams[string[i+2]][4] += 1     # Начисление очков ничьей для К2
+
+for key, value in teams.items():
+	row = key + ':' + ' ' + str(value[0]) + ' ' + str(value[1]) + ' ' + str(value[2]) + ' ' + str(value[3]) + ' ' + str(value[4])
+	print(row) 
