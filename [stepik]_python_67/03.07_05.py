@@ -32,3 +32,26 @@ Sample Output:
 10 -
 11 172.0
 '''
+
+class_rawinfo = {}
+new_heights = 0
+new_students = 0
+class_info = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+
+#with open('03.07_05_input.tsv') as in_f_obj:
+	#string = in_f_obj.readline().rstrip().split('	')
+n = int(input())
+for _ in range(n):
+	string = input().split('	')
+	if string[0] not in class_rawinfo:
+		class_rawinfo[string[0]] = [int(string[2]), 1]
+	elif string[0] in class_rawinfo:
+		new_heights = class_rawinfo[string[0]][0] + int(string[2])
+		new_students = class_rawinfo[string[0]][1] + 1
+		class_rawinfo[string[0]] = [new_heights, new_students]
+
+#with open('03.07_05_input.tsv', 'w') as out_f_obj:
+
+for k, v in class_rawinfo.items():
+	#print(k, str(v[0] / v[1]))
+	class_info.insert((int(k)-1), (v[0] / v[1]))
