@@ -14,7 +14,7 @@
 
 import requests
 
-with open('03.06_02_input.txt') as in_f_obj:
+with open('03_06_02_input.txt') as in_f_obj:
 	url = in_f_obj.read().strip()
 
 r = requests.get(url)
@@ -26,5 +26,5 @@ for line in r.text.splitlines():
 # Цикл выше можно заменить более простой конструкцией
 # print(len(r.text.splitlines()))
 
-with open('03.06_02_output.txt', 'w') as out_f_obj:
+with open('03_06_02_output.txt', 'w') as out_f_obj:
 	out_f_obj.write(str(counter))

@@ -39,7 +39,7 @@ class_rawinfo = {}
 class_info = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
 #class_info = []
 
-with open('03.07_05_input.txt') as in_f_obj:
+with open('03_07_05_input.txt') as in_f_obj:
 	for line in in_f_obj:
 		#print(line)
 		string = line.rstrip().split('\t')
@@ -61,7 +61,7 @@ for k, v in class_rawinfo.items():
 	#print(class_rawinfo)
 	#print(class_info)
 
-with open('03.07_05_output.txt', 'w') as out_f_obj:	
+with open('03_07_05_output.txt', 'w') as out_f_obj:	
 	for i in range(len(class_info)):
 		#print(i+1, str(class_info[i]))
 		output = str(i+1) + ' ' + str(class_info[i]) + '\n'

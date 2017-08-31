@@ -38,7 +38,7 @@ value01 = 0
 value02 = 0
 value03 = 0
 
-with open('03.04_04_input.txt') as in_f_obj:
+with open('03_04_04_input.txt') as in_f_obj:
 	
 	for line in in_f_obj:
 		line = line.rstrip().split(';')
@@ -49,7 +49,7 @@ with open('03.04_04_input.txt') as in_f_obj:
 		marks_rus.append(int(line[3]))
 		counter += 1
 		
-with open('03.04_04_output.txt', 'w') as out_f_obj:
+with open('03_04_04_output.txt', 'w') as out_f_obj:
 	
 	for _ in averages:
 		out_f_obj.write(str(_) + '\n')
@@ -65,4 +65,3 @@ with open('03.04_04_output.txt', 'w') as out_f_obj:
 	average_rus = value03 / counter
 	
 	out_f_obj.write(str(average_math) + ' ' + str(average_phys) + ' ' + str(average_rus))
-	

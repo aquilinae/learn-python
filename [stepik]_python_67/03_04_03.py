@@ -17,7 +17,7 @@ abc 3
 
 dictionary = {}
 
-with open('03.04_03_input.txt') as in_f_obj:
+with open('03_04_03_input.txt') as in_f_obj:
 	for line in in_f_obj:
 		line = line.lower()
 		for word in line.split():
@@ -34,6 +34,6 @@ for key, value in dictionary.items():
 		max_quantity = current_quantity
 		word_with_max_quantity = key
 	
-with open('03.04_03_output.txt', 'w') as out_f_obj:
+with open('03_04_03_output.txt', 'w') as out_f_obj:
 	most_popular = (word_with_max_quantity + ' ' + str(max_quantity))
 	out_f_obj.write(most_popular)

@@ -26,8 +26,8 @@ i = 0
 multiplier = ''
 decrypted = ''
 
-with open('03.04_02_input.txt') as input_f_obj:
-    string = input_f_obj.readline().strip()
+with open('03_04_02_input.txt') as in_f_obj:
+    string = in_f_obj.readline().strip()
 	
 char = string[i]
 i += 1
@@ -50,6 +50,5 @@ while i < len(string):
 	
 	i += 1	
 
-with open('03.04_02_ouput.txt', 'w') as ouput_f_obj:
-	ouput_f_obj.write(decrypted)
-	
+with open('03_04_02_ouput.txt', 'w') as out_f_obj:
+	out_f_obj.write(decrypted)

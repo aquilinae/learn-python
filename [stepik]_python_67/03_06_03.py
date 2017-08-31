@@ -18,7 +18,7 @@ import requests
 
 url_pattern = 'https://stepik.org/media/attachments/course67/3.6.3/'
 
-with open('03.06_03_input.txt') as in_f_obj:
+with open('03_06_03_input.txt') as in_f_obj:
 	url = in_f_obj.read().strip()
 
 counter = 0
@@ -34,7 +34,7 @@ while True:
 
 text = r.text.strip()
 
-with open('03.06_03_output.txt', 'w') as out_f_obj:
+with open('03_06_03_output.txt', 'w') as out_f_obj:
 	out_f_obj.write(text)
 
 '''
