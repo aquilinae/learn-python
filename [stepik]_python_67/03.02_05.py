@@ -1,6 +1,6 @@
 #[STEPIK]
 # Программирование на Python https://stepik.org/67
-# 3.2.5 Словари
+# 03_02_05 Словари
 
 '''
 Напишите функцию update_dictionary(d, key, value), которая принимает на вход словарь d и два числа: key и value.
