@@ -77,3 +77,6 @@ ivan.increment_login_attempts()
 print("Number of", ivan.first_name, "login attempts is:", ivan.login_attempts)
 ivan.increment_login_attempts()
 print("Number of", ivan.first_name, "login attempts is:", ivan.login_attempts)
+
+nikolai.reset_login_attempts()
+print("Number of", nikolai.first_name, "login attempts is:", nikolai.login_attempts)
