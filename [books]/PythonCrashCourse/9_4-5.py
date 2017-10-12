@@ -1,9 +1,9 @@
 class Restaurant():
 
-    def __init__(self, restaurant_name, cuisine_type, number_served = 0):
+    def __init__(self, restaurant_name, cuisine_type):
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
-        self.number_served = number_served
+        self.number_served = 0
 
     def describe_restaurant(self):
         print("The restaurant name is", self.restaurant_name)
@@ -22,14 +22,13 @@ class User():
 
     def __init__(
         self,
-        first_name, last_name, phone='No phone', email='No e-mail', company ='Unemployed',
-        login_attempts=0):
+        first_name, last_name, phone='No phone', email='No e-mail', company ='Unemployed'):
         self.first_name = first_name
         self.last_name = last_name
         self.phone = phone
         self.email = email
         self.company = company
-        self.login_attempts = login_attempts
+        self.login_attempts = 0
 
     def describe_user(self):
         print("We have a person called", self.first_name.title(), self.last_name.title())
@@ -64,7 +63,7 @@ print("Number of served customers is:", restaurant.number_served)
 print()
 
 # Task 5
-nikolai = User('Nikolai', 'Nikolaev', '7887774488', 'nikolai@monkeybusiness.com', 'Monkey Business LLC', 41)
+nikolai = User('Nikolai', 'Nikolaev', '7887774488', 'nikolai@monkeybusiness.com', 'Monkey Business LLC')
 ivan = User('Ivan', 'Ivanov')
 nikolai.describe_user()
 print("Number of", nikolai.first_name, "login attempts is:", nikolai.login_attempts)
@@ -78,5 +77,5 @@ print("Number of", ivan.first_name, "login attempts is:", ivan.login_attempts)
 ivan.increment_login_attempts()
 print("Number of", ivan.first_name, "login attempts is:", ivan.login_attempts)
 
-nikolai.reset_login_attempts()
-print("Number of", nikolai.first_name, "login attempts is:", nikolai.login_attempts)
+ivan.reset_login_attempts()
+print("Number of", ivan.first_name, "login attempts is:", ivan.login_attempts)
