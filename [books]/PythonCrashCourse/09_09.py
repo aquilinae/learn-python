@@ -34,15 +34,23 @@ class Battery():
         """Выводит информацию о мощности аккумулятора."""
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
 
-        def get_range(self):
-            """Выводит приблизительный запас хода для аккумулятора."""
-            if self.battery_size == 70:
-                range = 240
-            elif self.battery_size == 85:
-                range = 270
-            message = "This car can go approximately " + str(range)
-            message += " miles on a full charge."
-            print(message)
+    def get_range(self):
+        """Выводит приблизительный запас хода для аккумулятора."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        message = "This car can go approximately " + str(range)
+        message += " miles on a full charge."
+        print(message)
+
+    def upgrade_battery(self):
+        """Проверяет размер аккумулятора и устанавливает мощность 85, если другое значение."""
+        if self.battery_size < 85:
+            self.battery_size = 85
+            print("Your Battery has been upgraded! Let's ride!")
+        else:
+            print("Your battery is already have high capacity. You don't need upgrade.")
 
 class ElectricCar(Car):
     """Представляет аспекты машины, специфические для электромобилей."""
@@ -54,3 +62,11 @@ class ElectricCar(Car):
         """
         super().__init__(make, model, year)
         self.battery = Battery()
+
+nissan_leaf = ElectricCar("nissan", "leaf", 2017)
+nissan_leaf.get_descriptive_name()
+nissan_leaf.battery.get_range()
+nissan_leaf.battery.upgrade_battery()
+nissan_leaf.battery.get_range()
+nissan_leaf.battery.upgrade_battery()
+nissan_leaf.battery.get_range()
