@@ -49,10 +49,10 @@ class User():
 
     def describe_user(self):
         print("User name is", self.fname.title(), self.lname.title())
-        print("Phone:", self.phone, "\te-mail:", self.email)
+        print("Phone:", self.phone, "\te-mail:", self.email.lower())
 
     def greet_user(self):
-        print("Greetings,", self.fname, self.lname)
+        print("\nGreetings,", self.fname, self.lname)
 
     def increment_login_attempts(self):
         self.login_attempts += 1
@@ -66,9 +66,9 @@ class Admin(User):
         super().__init__(fname, lname, phone, email)
         self.privilleges = privilleges
 
-    def show_provilliges(self):
+    def show_privilliges(self):
         print(self.fname, self.lname, "is able to:")
-        for privillege in privilleges:
+        for privillege in self.privilleges:
             print(privillege.capitalize())
 
 privilleges = [
@@ -79,7 +79,7 @@ privilleges = [
     ]
 
 anykey = Admin("Andrei", "Deploev", privilleges, "79877891266")
-anykey.show_provilliges()
+anykey.show_privilliges()
 anykey.describe_user()
 
 # Task 8
@@ -91,8 +91,8 @@ class Privilleges():
     def __init__(self, privilleges):
         self.privilleges = privilleges
 
-    def show_provilliges(self):
-        for privillege in privilleges:
+    def show_privilliges(self):
+        for privillege in self.privilleges:
             print(privillege.capitalize())
 
 privilleges = [
@@ -106,6 +106,6 @@ class Admin(User):
         super().__init__(fname, lname, phone, email)
         self.privilleges = Privilleges(privilleges)
 
-keyany = Admin("Valerii", "Undeploev", privilleges, "79877891266")
+keyany = Admin("Valerii", "Undeploev", "79877891266")
 
-keyany.privilleges.show_provilliges()
+keyany.privilleges.show_privilliges()
