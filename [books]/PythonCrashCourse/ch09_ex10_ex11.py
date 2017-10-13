@@ -1,5 +1,5 @@
 from ch09_ex10_restaraunt import Restaurant
-from ch09_ex10_user import Admin
+from ch09_ex11_user import Admin
 
 # Task 10
 
@@ -11,3 +11,7 @@ samovar.describe_restaurant()
 # Task 11
 
 print("\n# TASK 11\n")
+
+anykey = Admin("Andrei", "Anykeev")
+anykey.describe_user()
+anykey.privilleges.show_privilliges()
