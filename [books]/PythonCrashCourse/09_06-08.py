@@ -73,7 +73,7 @@ class Admin(User):
 
 privilleges = [
     "delete users",
-    "add users"
+    "add users",
     "create spaces",
     "managing boards",
     ]
@@ -85,3 +85,27 @@ anykey.describe_user()
 # Task 8
 
 print("\n# TASK 8\n")
+
+class Privilleges():
+
+    def __init__(self, privilleges):
+        self.privilleges = privilleges
+
+    def show_provilliges(self):
+        for privillege in privilleges:
+            print(privillege.capitalize())
+
+privilleges = [
+    "add users",
+    "managing boards",
+    ]
+
+class Admin(User):
+
+    def __init__(self, fname, lname, phone='No phone', email='No e-mail'):
+        super().__init__(fname, lname, phone, email)
+        self.privilleges = Privilleges(privilleges)
+
+keyany = Admin("Valerii", "Undeploev", privilleges, "79877891266")
+
+keyany.privilleges.show_provilliges()
