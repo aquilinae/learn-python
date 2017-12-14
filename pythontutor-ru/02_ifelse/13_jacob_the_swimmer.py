@@ -12,15 +12,30 @@ M = int(input())
 x = int(input())
 y = int(input())
 
-if N > M:
-    N, M = M, N
+N = int(input())
+M = int(input())
+x = int(input())
+y = int(input())
 
-if x >= N / 2:
-    x = N - x
-if y >= M / 2:
-    y = M - y
+if N > M:
+    # т.к. x - расстояние до длинного борта, x + x' = M, т.е. параллель короткому борту
+    if x > (M / 2):
+        x = M - x
+    if y > (N / 2):
+        y = N - y
+else:
+    # этого блока можно избежать, выполнив изящный обмен значениями
+    '''
+    if N > M:
+        N, M = M, N
+    '''
+    if x > (N / 2):
+        x = N - x
+    if y > (M / 2):
+        y = M - y
 
 if x < y:
     print(x)
 else:
     print(y)
+# про min(args) я пока официально не в курсе
